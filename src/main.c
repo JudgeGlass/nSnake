@@ -64,19 +64,23 @@ void quit(void){
     SDL_FreeSurface(screen);
     SDL_FreeSurface(img_player);
     SDL_FreeSurface(img_apple);
-    
+    SDL_FreeSurface(img_menu);
+    SDL_FreeSurface(img_gameover);
+
+    free(head);
 
     SDL_Quit();
     done = SDL_TRUE;
 }
 
+/* PC Debug
 SDL_Surface* load_image(const char *filename){
     SDL_Surface *image = SDL_LoadBMP(filename);
     SDL_Surface *op_image = SDL_DisplayFormat(image);
     SDL_FreeSurface(image);
     image = NULL;
     return op_image;
-}
+}*/
 
 Uint8 randomUint(Uint8 min, Uint8 max){
     return (rand() % (max - min + 1));
